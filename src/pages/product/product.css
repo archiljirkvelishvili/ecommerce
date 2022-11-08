@@ -1,0 +1,144 @@
+
+.product-wrapper{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    margin-top: 100px;
+    column-gap: 50px;
+    
+}
+.scroll-img-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 14%;
+    row-gap: 10px;
+}
+
+.scroll-img{
+    width: 80px;
+    height: 80px;
+}
+.scroll-img > img{
+    height: inherit;
+}
+
+.scroll-img >img:hover{
+    cursor: pointer;
+}
+
+
+.mainpic-wrapper{
+    display: flex;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.mainpic-wrapper > div{
+    height: 500px;
+    width: 600px;
+}
+
+.mainpic-wrapper > div > img{
+    width: 100%;
+   
+}
+
+.info-wrapper{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 100px;
+    padding-bottom: 100px;
+    row-gap: 30px;
+}
+
+
+.info-wrapper  .text-attributes-wrapper {   
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    justify-content: flex-start;
+}
+
+.info-wrapper .attributes-name{
+    flex-basis: 100%;
+    font-size: 18px;
+}
+
+.info-wrapper  .text-attributes-wrapper >p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 45px;
+    border: 1px solid black
+}
+
+.clicked {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 45px;
+    border: 1px solid black;
+    background-color: #1D1F22;
+    color: white;
+}
+
+
+
+.info-wrapper  .text-attributes-wrapper >p:hover {
+    cursor: pointer;
+    background-color: #1D1F22;
+    color: white;
+}
+.info-wrapper .price{
+    font-size: 18px;
+}
+
+.info-wrapper .amount{
+    font-size: 24px;
+    
+}
+
+.info-wrapper .button{
+    width: 100%;
+    background-color: #5ECE7B;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-wrapper .button >p{
+    padding: 15px
+}
+
+.info-wrapper .button >p:hover{
+    cursor: pointer;
+    opacity: 0.5
+}
+
+.info-wrapper .description{
+    font-size: 16px;
+}
+
+.info-wrapper  .swatch-attributes-wrapper{
+    display: flex;
+    column-gap: 10px;
+    
+}
+
+.info-wrapper  .swatch-attributes-wrapper div{
+    border: 1px solid gray
+}
+
+.info-wrapper  .swatch-attributes-wrapper div:hover{
+    border: 2px solid #5ECE7B;
+    cursor: pointer;
+    
+}
