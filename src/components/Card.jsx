@@ -1,8 +1,6 @@
-import React from "react";
-import { useContext } from "react";
-import { useState } from "react";
-import { currencyContext } from "../state/State";
+import React, { useContext, useState } from "react";
 
+import { currencyContext } from "../state/State";
 import white_cart from "../assets/white_cart.png"
 
 

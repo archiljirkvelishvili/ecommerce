@@ -55,27 +55,51 @@
     row-gap: 30px;
 }
 
-
-.info-wrapper  .text-attributes-wrapper {   
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 10px;
-    column-gap: 10px;
-    justify-content: flex-start;
-}
-
 .info-wrapper .attributes-name{
     flex-basis: 100%;
     font-size: 18px;
 }
 
-.info-wrapper  .text-attributes-wrapper >p {
+.info-wrapper  .text-attributes-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+
+}
+.info-wrapper  .text-attributes-wrapper >form{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-between;
+    
+   
+}
+.info-wrapper  .text-attributes-wrapper >form label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
     width: 60px;
     height: 45px;
-    border: 1px solid black
+}
+
+.info-wrapper  .text-attributes-wrapper >form label:hover{
+    background-color: #1D1F22;
+    color: white;
+    cursor: pointer;
+}
+
+.info-wrapper  .text-attributes-wrapper >form>input {
+    display: none; 
+}
+
+.info-wrapper  .text-attributes-wrapper >form>input:checked + label{
+    background-color: #1D1F22;
+    color: white;
 }
 
 .clicked {
@@ -89,13 +113,6 @@
     color: white;
 }
 
-
-
-.info-wrapper  .text-attributes-wrapper >p:hover {
-    cursor: pointer;
-    background-color: #1D1F22;
-    color: white;
-}
 .info-wrapper .price{
     font-size: 18px;
 }
@@ -137,8 +154,27 @@
     border: 1px solid gray
 }
 
+.info-wrapper  .swatch-attributes-wrapper input{
+   display: none
+}
+
 .info-wrapper  .swatch-attributes-wrapper div:hover{
     border: 2px solid #5ECE7B;
     cursor: pointer;
     
+}
+.info-wrapper .swatch-attributes-wrapper >form{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between
+}
+.info-wrapper .swatch-attributes-wrapper >form>input:checked + .label{
+    border: 2px solid #5ECE7B;
+    color: white;
+}
+
+.clicked_color{
+    border: 2px solid #5ECE7B;
+    cursor: pointer;
 }

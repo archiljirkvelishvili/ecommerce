@@ -1,11 +1,8 @@
 
-import React, { useState } from "react";
-import { useContext } from "react";
-import { useEffect } from "react";
+import React, { useState, useContext, useEffect  } from "react";
 import { useParams } from "react-router-dom";
 
 import { currencyContext, cartContext } from "../../state/State";
-
 import useProduct from "../../hooks/useProduct";
 import "./product.css"      
 import ProdAttr from "../../components/ProdAttr";
@@ -20,10 +17,11 @@ export default function Product(){
     const {setCart} = useContext(cartContext)
     const exactAmount = data && data.product.prices.map(item => item.currency.symbol).indexOf(currency)
 
-    const [mainpic, setMainpic] = useState()
-    
-    const [choose, setChoose] = useState({})
 
+    const [mainpic, setMainpic] = useState()
+    const [choose, setChoose] = useState({})
+    console.log(choose)
+    
    
     useEffect(()=>{
         data && setMainpic(data.product.gallery[0])
@@ -40,39 +38,53 @@ export default function Product(){
     let first = []
     let second =null
     
-   
-    
+ 
     if(data && data.product.attributes.length >= 1){
         
-        data.product.attributes.map((item) => {
+        data.product.attributes.map((item, index) => {
             
             if(item.type==="text" ){
                 
-                const allAttributes = item.items.map((x, index) => {    
-                    return(
-                        <ProdAttr 
-                            key={index}
-                            index={index} 
-                            item={item} 
-                            x={x} 
-                            onClick={()=> (setChoose((prev) => ({...prev, [item.name]: x.value})))} 
-                        />
-                    )
-                })
+                const allAttributes = 
+                (
+                    <form key={index}>
+                        {
+                            item.items.map((x, index) => {    
+                                return(
+                                    <ProdAttr 
+                                        key={index}
+                                        index={index} 
+                                        item={item}
+                                        x={x} 
+                                        onClick={(value)=> {setChoose((prev) => ({...prev, [item.name]: value}))}} 
+                                    />
+                                )
+                            })
+                        }
+                    </form>
+                )
                 first.push(allAttributes)
             
             } else if(item.type==="swatch"){   
-                second = item.items.map((x, index) => {
-                    return(
-                        <ProdAttr 
-                            key={index}
-                            type={item.type} 
-                            index={index} 
-                            x={x} 
-                            onClick={()=> setChoose((prev) => ({...prev, [item.name]: x.value}))} 
-                         />
-                    )
-            })}
+                second = (
+                    <form>
+                    {
+                        item.items.map((x, index) => {
+                            return(
+                                <ProdAttr 
+                                    key={index}
+                                    type={item.type} 
+                                    index={index} 
+                                    x={x} 
+                                    onClick={()=> setChoose((prev) => ({...prev, [item.name]: x.value}))} 
+                                />
+                            )
+                        })
+                    }
+                    </form>
+                )
+        }
+
         })
    }        
 
