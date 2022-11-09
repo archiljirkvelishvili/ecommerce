@@ -53,3 +53,24 @@ a{
     justify-content: flex-end;
     gap: 30px
 }
+.cart-wrapper{
+    position: relative;
+    display: flex;
+}
+
+.notify{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    right:-8px;
+    top:-8px;
+    z-index: 10;
+
+}

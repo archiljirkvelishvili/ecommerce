@@ -60,7 +60,10 @@ function App() {
                 >
                   {currencySymbols} 
                 </select>
-                <Link to="/cart"> <img src={cartLogo} alt="cart"/> </Link>
+                <Link to="/cart" className="cart-wrapper"> 
+                  <img src={cartLogo} alt="cart"/> 
+                  {cart && cart.length >0 && <div className="notify">{cart.length}</div>}
+                </Link>
               </div>
           </nav>
         </div>

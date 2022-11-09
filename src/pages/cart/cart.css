@@ -1,0 +1,94 @@
+.cart-page-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    margin-top: 100px;
+    row-gap: 80px;
+    
+}
+
+.cart-page-wrapper .title {
+    width: 80%;
+    margin: auto;
+
+}
+
+.cartItem-wrapper{
+    display: flex;
+    width: 100% ;   
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.cart-item-main-info{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+}
+
+
+.cart-item-main-info h2{
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+.cart-item-main-info .cart-item-radio h2{
+    font-size: 20px;
+}
+
+
+.cart-item-main-info .cart-item-color{
+    display:flex;
+   
+}
+
+
+
+
+.cart-item-main-info form{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.cart-item-radio form label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 60px;
+    height: 45px;
+}
+
+.cart-item-radio form label:hover{
+    background-color: #1D1F22;
+    color: white;
+    cursor: pointer;
+}
+
+form>input {
+    display: none; 
+}
+
+.cart-item-radio form>input:checked + label{
+    background-color: #1D1F22;
+    color: white;
+}
+
+.cart-item-color form label {
+    border: none;
+}
+
+.cart-item-color form label div:hover{
+    border: solid 2px red
+}
+
+.cart-item-img img{
+    height: 300px
+  
+}

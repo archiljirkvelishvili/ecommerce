@@ -11,22 +11,30 @@ import ProdAttr from "../../components/ProdAttr";
 export default function Product(){
     const {id} = useParams()
     const {data, loading, error} = useProduct(id)
-
+    console.log(data)
 
     const {currency} = useContext(currencyContext)
-    const {setCart} = useContext(cartContext)
+    const {cart, setCart} = useContext(cartContext)
     const exactAmount = data && data.product.prices.map(item => item.currency.symbol).indexOf(currency)
 
-    const [items, setItems] = useState([]);
+  
 
-    useEffect(() => {
-      localStorage.setItem('cartItems', JSON.stringify(items));
-    }, [items]);
+    const addToCart =()=>{
+        data.product.attributes.length === Object.keys(choose).length 
+        &&
+        localStorage.setItem("items",localStorage.getItem("items")===null? 
+            JSON.stringify([{data, choosen:choose, id}])
+            :
+            JSON.stringify([...JSON.parse(localStorage.getItem("items")),{data, choosen:choose, id}]))
+
+            setCart(JSON.parse(localStorage.getItem("items")))
+    }
+
 
 
     const [mainpic, setMainpic] = useState()
     const [choose, setChoose] = useState({})
-    console.log(choose)
+
     
    
     useEffect(()=>{
@@ -127,7 +135,9 @@ export default function Product(){
                         {data && <p className="amount">{currency} {data.product.prices[exactAmount].amount}</p> }
                     </div>
                     <div className="button">
-                        <p onClick={() => data.product.attributes.length === Object.keys(choose).length && setItems(prev => Object.assign(prev, {productid:id, choosen:choose}) )}>ADD TO CART</p>
+                        <button onClick={() => addToCart()} disabled={data.product.attributes.length !== Object.keys(choose).length}>
+                                ADD TO CART
+                        </button>
                     </div>
                     <div className="description">
                         <p dangerouslySetInnerHTML={{__html:data.product.description}}></p>
