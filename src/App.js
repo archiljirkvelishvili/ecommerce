@@ -10,6 +10,7 @@ import Home from "./pages/home/Home";
 import Clothes from "./pages/clothes/Clothes";
 import Tech from "./pages/tech/Tech";
 import Product from "./pages/product/Product";
+import Cart from "./pages/cart/Cart";
 import { currencyContext, cartContext } from "./state/State";
 
 function App() {
@@ -59,7 +60,7 @@ function App() {
                 >
                   {currencySymbols} 
                 </select>
-                <img src={cartLogo} alt="cart"/> 
+                <Link to="/cart"> <img src={cartLogo} alt="cart"/> </Link>
               </div>
           </nav>
         </div>
@@ -68,6 +69,7 @@ function App() {
         <Route path="/clothes" element={<Clothes />} />     
         <Route path="/tech" element={<Tech/>} />
         <Route path="/product/:id" element={<Product/>} />
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
 
       </div>

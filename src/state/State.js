@@ -6,7 +6,7 @@ export const cartContext = React.createContext()
 export default function State({children}){
 
     const [currency, setCurrency] =  useState("$")
-    const [cart, setCart] = useState({productId:"", choosen:""})
+    const [cart, setCart] = useState({})
     console.log(cart)
 
     return(

@@ -37,7 +37,7 @@
 
 .mainpic-wrapper > div{
     height: 500px;
-    width: 600px;
+    max-width: 600px;
 }
 
 .mainpic-wrapper > div > img{
@@ -70,13 +70,10 @@
 }
 .info-wrapper  .text-attributes-wrapper >form{
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     row-gap: 10px;
-    justify-content: space-between;
-    
-   
+    column-gap: 10px;
 }
 .info-wrapper  .text-attributes-wrapper >form label{
     display: flex;

@@ -17,6 +17,12 @@ export default function Product(){
     const {setCart} = useContext(cartContext)
     const exactAmount = data && data.product.prices.map(item => item.currency.symbol).indexOf(currency)
 
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+      localStorage.setItem('cartItems', JSON.stringify(items));
+    }, [items]);
+
 
     const [mainpic, setMainpic] = useState()
     const [choose, setChoose] = useState({})
@@ -121,7 +127,7 @@ export default function Product(){
                         {data && <p className="amount">{currency} {data.product.prices[exactAmount].amount}</p> }
                     </div>
                     <div className="button">
-                        <p onClick={() => data.product.attributes.length === Object.keys(choose).length && setCart({productid:id, choosen:choose})}>ADD TO CART</p>
+                        <p onClick={() => data.product.attributes.length === Object.keys(choose).length && setItems(prev => Object.assign(prev, {productid:id, choosen:choose}) )}>ADD TO CART</p>
                     </div>
                     <div className="description">
                         <p dangerouslySetInnerHTML={{__html:data.product.description}}></p>
